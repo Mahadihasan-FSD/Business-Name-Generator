@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Title of the Page -->
+  <meta name="title" content="Business Name Generator">
+  
+  <!-- Description for SEO and Social Media -->
+  <meta name="description" content="Generate unique and creative business names for tech, restaurant, fitness, and fashion sectors.">
+  
+  <!-- Keywords for SEO -->
+  <meta name="keywords" content="business name generator, business name ideas, tech business name, restaurant name generator, fitness name generator, fashion name ideas">
+  
+  <!-- Open Graph meta tags for social media (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-website-url.com">
+  <meta property="og:title" content="Business Name Generator">
+  <meta property="og:description" content="Generate unique and creative business names for various industries like tech, restaurants, fitness, and fashion.">
+  <meta property="og:image" content="https://your-website-url.com/image.jpg">
+  
+  <!-- Twitter Card meta tags for Twitter sharing -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yourtwitterhandle">
+  <meta name="twitter:title" content="Business Name Generator">
+  <meta name="twitter:description" content="Generate unique and creative business names for various industries like tech, restaurants, fitness, and fashion.">
+  <meta name="twitter:image" content="https://your-website-url.com/image.jpg">
+  <title>Business Name Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Business Name Generator</h1>
+
+  <!-- Subheader with brief instructions -->
+  <p class="subheader">Looking for the perfect name for your new business? Choose your business type, and we’ll generate some creative, unique names to get you started.</p>
+
+  <!-- Instructions for the user -->
+  <p class="instructions">
+    Select the type of business you're creating from the dropdown menu below, and click on the "Generate Business Names" button to get some exciting suggestions. Whether you’re starting a tech startup, restaurant, fitness brand, or fashion line, we've got you covered!
+  </p>
+
+  <!-- Business type selection and generate button -->
+  <label for="businessType"><strong>Choose the type of business:</strong></label>
+  <select id="businessType">
+    <option value="tech">Tech</option>
+    <option value="restaurant">Restaurant</option>
+    <option value="fitness">Fitness</option>
+    <option value="fashion">Fashion</option>
+  </select>
+
+  <button onclick="generateName()">Generate Business Names</button>
+
+  <!-- Display the generated business names -->
+  <div id="nameList"></div>
+
+  <script>
+ function generateName() {
+  const businessType = document.getElementById('businessType').value;
+
+  // Arrays with base words for different business types
+  const techWords = [
+    'Tech', 'Cyber', 'Pixel', 'Quantum', 'Cloud', 'Neuro', 'Nex', 'Byte', 'Spark', 'Algorithm', 
+    'API', 'Backend', 'Blockchain', 'Cloud Computing', 'Containerization', 'Data Analytics', 'Database', 
+    'DevOps', 'Encryption', 'Frontend', 'Git', 'GUI', 'IoT', 'JavaScript', 'JSON', 'Kubernetes', 'Machine Learning',
+    'Microservices', 'Mobile App', 'Node.js', 'Open Source', 'Python', 'React', 'SQL', 'SaaS', 'SEO', 'Serverless',
+    'SSL', 'UI/UX Design', 'Virtualization', 'WebSocket', 'CDN', 'NoSQL', 'GraphQL', 'Authentication', 
+    'Authorization', 'Version Control', 'CRUD', 'API Gateway', 'Cloud Storage', 'Data Mining', 'CI/CD', 'Docker', 
+    'Frontend Framework', 'Backend Framework', 'Artificial Intelligence', 'Test Automation', 'Data Warehouse', 
+    'Big Data', 'Agile Development', 'Dependency Injection', 'GitHub', 'JQuery', 'MongoDB', 'PHP', 'SQL Injection', 
+    'RAM', 'GPU', 'Web Scraping', 'Proxy', 'RESTful API', 'SDK', 'Cloud Computing', 'VPN', 'Digital Transformation', 
+    'Hypervisor', 'Elastic Search', 'TensorFlow', 'Natural Language Processing', 'Data Science', 'IoT Devices', 
+    'Cybersecurity', 'Penetration Testing', 'Bug Fix', 'Agile Methodology', 'Smart Contract', 'Quantum Computing', 
+    'GitLab', 'Continuous Integration', 'Load Balancer', 'Cloud Infrastructure', 'WebSocket', 'Kubernetes', 'Firebase', 
+    'API Documentation', 'SaaS Model', 'Digital Twin', 'WebAssembly', 'Object-Oriented Programming', 'Static Site Generator', 
+    'Micro Frontends', 'WebRTC', 'MQTT', 'Push Notifications', 'Unit Testing', 'Cross-Platform Development', 
+    'Data Integration', 'Edge Computing', '5G', 'Cyber-Physical Systems', 'Server Farms', 'Data Lakes', 'Hadoop', 'OpenStack', 
+    'Server Clusters', 'Blockchain-as-a-Service', 'Data Encryption', 'Agile Scrum', 'Serverless Architecture', 'Big Data Analytics'
+  ];
+
+  const restaurantWords = [
+    'Sizzle', 'Taste', 'Bistro', 'Feast', 'Spice', 'Epicurean', 'Grill', 'Savory', 'Fusion', 'Gourmet', 
+    'Flavor', 'Dish', 'Café', 'Dine', 'Kitchen', 'Spoon', 'Plates', 'Fresh', 'Delight', 'Feast', 'Chow', 'Brew', 
+    'Crave', 'Tasty', 'Gastronomy', 'Spicy', 'Sizzle', 'Savor', 'Palate', 'Eats', 'Cravings', 'Zest', 'Feast', 
+    'Griddle', 'Smoke', 'Barbecue', 'Rotisserie', 'Brewery', 'Deli', 'Culinary', 'Bakeshop', 'Vino', 'Harvest', 
+    'Roast', 'Munch', 'Tantalize', 'Cookhouse', 'Chili', 'Season', 'Tastebuds', 'Morsel', 'Epicure', 'Baked', 'Bistro', 
+    'Smoky', 'Herb', 'Roast', 'Brewed', 'Nosh', 'Savory', 'Appetite', 'Crave', 'Saffron', 'Tandoor', 'Brasserie', 
+    'Buffet', 'Grillhouse', 'Brunch', 'Street Food', 'Snack', 'Cravings', 'Whisk', 'Tavern', 'Panini', 'Chowdown', 
+    'Feast', 'Delicacy', 'Fusion', 'Treats', 'Appetizer', 'Chefs', 'Sweets', 'Spices', 'Culinary Delight', 'Specialty'
+  ];
+
+  const fitnessWords = [
+    'Flex', 'Pulse', 'Vigor', 'Enduro', 'Fit', 'Zen', 'Power', 'Strength', 'Core', 'Muscle', 'Endurance', 
+    'Shape', 'Cardio', 'Stretch', 'Fitment', 'Sweat', 'Lift', 'Tone', 'Burn', 'Cardio', 'Squat', 'Run', 'Jog', 
+    'Flexibility', 'Sprint', 'Reps', 'Abs', 'Power', 'Push', 'Stamina', 'Gym', 'Yoga', 'Pilates', 'Abs', 'Bodybuilding', 
+    'Resistance', 'Health', 'Strengthen', 'Wellness', 'Lean', 'Intensity', 'Peak', 'Burnout', 'Motivation', 'Max', 
+    'Gains', 'Muscular', 'Hydrate', 'Exercise', 'Active', 'FitnessGoals', 'Squats', 'Crunches', 'Deadlift', 'Barbell', 
+    'Calisthenics', 'MuscleTone', 'Energy', 'Vitamins', 'Bodyweight', 'Functional', 'Endurance', 'Plyometrics', 
+    'Pushups', 'CoreStrength', 'AbsWorkouts', 'Kettlebell', 'Jump', 'Stretching', 'Rehab', 'Recovery', 'Activewear', 
+    'FitnessJourney', 'Motivational', 'StrengthTraining', 'Flexion', 'Conditioning', 'Vitality', 'Wellbeing', 'Workouts'
+  ];
+
+  const fashionWords = [
+    'Chic', 'Vogue', 'Urban', 'Trendy', 'Sleek', 'Mode', 'Allure', 'Style', 'Elegance', 'Couture', 'Luxury', 
+    'Haute', 'Fit', 'Runway', 'Stitch', 'Threads', 'Finesse', 'Fashion', 'Tailor', 'Polished', 'Minimal', 
+    'Glam', 'Edge', 'Casual', 'Streetwear', 'Monochrome', 'Glamour', 'Boutique', 'Outfit', 'Vintage', 'Rogue', 
+    'Modern', 'Attire', 'Fabrics', 'Color', 'Textures', 'Accessoires', 'Boho', 'Luxe', 'ChicFit', 'UrbanChic', 
+    'NewLook', 'MustHave', 'Trendsetter', 'Vibe', 'Charming', 'Shimmer', 'Glamorous', 'Fashionista', 'Bold', 'StyleTrend',
+    'Flair', 'Sartorial', 'Classic', 'UrbanStyle', 'Glamourous', 'Posh', 'Dapper', 'Refined', 'Sassy', 'Posh', 
+    'Silk', 'Leather', 'Tweed', 'Denim', 'Bohemian', 'Ethnic', 'Minimalist', 'Statement', 'Trendywear', 'Swank', 'CasualWear'
+  ];
+
+  // Function to generate shorter random name combinations
+  function generateRandomName(words) {
+    const word1 = words[Math.floor(Math.random() * words.length)].slice(0, 4); // Limit to 4 characters
+    const word2 = words[Math.floor(Math.random() * words.length)].slice(0, 4); // Limit to 4 characters
+    return word1 + word2;
+  }
+
+  let nameSuggestions = [];
+
+  switch (businessType) {
+    case 'tech':
+      for (let i = 0; i < 3; i++) {
+        nameSuggestions.push(generateRandomName(techWords)); // Generate short names for tech
+      }
+      break;
+    case 'restaurant':
+      for (let i = 0; i < 3; i++) {
+        nameSuggestions.push(generateRandomName(restaurantWords)); // Generate short names for restaurant
+      }
+      break;
+    case 'fitness':
+      for (let i = 0; i < 3; i++) {
+        nameSuggestions.push(generateRandomName(fitnessWords)); // Generate short names for fitness
+      }
+      break;
+    case 'fashion':
+      for (let i = 0; i <3; i++) {
+        nameSuggestions.push(generateRandomName(fashionWords)); // Generate short names for fashion
+      }
+      break;
+    default:
+      nameSuggestions = ['BusinessOne', 'BusinessTwo', 'BusinessThree']; // Default names
+      break;
+  }
+
+  // Display the generated names
+  const nameListDiv = document.getElementById('nameList');
+  nameListDiv.innerHTML = `<strong>Suggested Names:</strong><ul>`;
+  nameSuggestions.forEach(name => {
+    nameListDiv.innerHTML += `<li>${name}</li>`;
+  });
+  nameListDiv.innerHTML += `</ul>`;
+}
+
+  </script>
+</body>
+</html>
